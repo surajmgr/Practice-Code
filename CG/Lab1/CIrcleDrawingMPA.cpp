@@ -39,11 +39,11 @@ int main()
 	int gd=DETECT, gm, i;
 	initgraph(&gd, &gm, "c:\\Turboc3\\BGI");
  
-	cout<<"Enter co-ordinates of center, (x,y): ";
-	cin>>x>>y;
+	printf("Enter co-ordinates of center, (x,y): ");
+	scanf("%d %d", &x, &y);
 	
-	cout<<"Enter radius of circle: ";
-	cin>>r;
+	printf("Enter radius of circle: ");
+	scanf("%d", &r);
 
 	drawcircle(x, y, r);
 

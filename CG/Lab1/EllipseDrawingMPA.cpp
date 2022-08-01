@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <graphics.h>
-#include <dos.h>
+// #include <dos.h>
 
 void createEllipse(int rx, int ry, int xc, int yc)
 {
@@ -80,12 +80,11 @@ int main()
 	int gd=DETECT, gm, i;
 	initgraph(&gd, &gm, "c:\\TurboC3\\BGI");
 
-	cout<<"Enter minor radius, (rx,ry): ";
-	cin>>rx>>ry;
-	cout<<"Enter radius, (xc,yc): ";
-	cin>>xc>>yc;
+	printf("Enter minor radius, (rx,ry): ");
+	scanf("%d %d", &rx, &ry);
+	printf("Enter radius, (xc,yc): ");
+	scanf("%d %d", &xc, &yc);
 	
-	// call the function
 	createEllipse(rx,ry,xc,yc);
 
 	getch();
