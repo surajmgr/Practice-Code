@@ -1,33 +1,44 @@
 #include <stdio.h>
 #include <graphics.h>
 #include <conio.h>
-
-using namespace std;
  
 void drawcircle(int x0, int y0, int r)
 {	
-    int x = r;
-    int y = 0;
-    int P = 0;
- 
-    while (x >= y)
+    int x = 0;
+    int y = r;
+    putpixel(x+x0, y+y0, WHITE);
+
+	if(r>0){
+		putpixel(x+x0, -y+y0, WHITE);
+		putpixel(y+x0, x+y0, WHITE);
+		putpixel(-y+x0, x+y0, WHITE);
+	}
+	
+	int P=1-r;
+
+    while (x <= y)
     {
-		putpixel(x0 + x, y0 + y, WHITE);
-		putpixel(x0 + y, y0 + x, WHITE);
-		putpixel(x0 - y, y0 + x, WHITE);
-		putpixel(x0 - x, y0 + y, WHITE);
-		putpixel(x0 - x, y0 - y, WHITE);
-		putpixel(x0 - y, y0 - x, WHITE);
-		putpixel(x0 + y, y0 - x, WHITE);
-		putpixel(x0 + x, y0 - y, WHITE);
- 
-		if (P <= 0){
-		    y += 1;
-    		P += 2*y + 1;
+		x++;
+		if(P<=0)
+			P=P+2*x+1;
+		else{
+			y--;
+			P=P+2*x-2*y+1;
 		}
-		if (P > 0){
-    		x -= 1;
-    		P -= 2*x + 1;
+
+		if(x>y)
+			break;
+
+		putpixel(x+x0, y+y0, WHITE);
+		putpixel(-x+x0, y+y0, WHITE);
+		putpixel(x+x0, -y+y0, WHITE);
+		putpixel(-x+x0, -y+y0, WHITE);
+
+		if(x!=y){
+			putpixel(y+x0, x+y0, WHITE);
+			putpixel(-y+x0, x+y0, WHITE);
+			putpixel(y+x0, -x+y0, WHITE);
+			putpixel(-y+x0, -x+y0, WHITE);
 		}
     }
 }
