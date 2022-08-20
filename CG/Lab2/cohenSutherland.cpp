@@ -44,7 +44,7 @@ PT setcode(PT p) // for setting the 4 bit code
         ptemp.code[3] = '0';
     ptemp.x = p.x;
     ptemp.y = p.y;
-    return (ptemp);
+    return ptemp;
 }
 
 int visibility(PT p1, PT p2)
@@ -56,15 +56,15 @@ int visibility(PT p1, PT p2)
             flag = 1;
     }
     if (flag == 0)
-        return (0);
+        return 0;
     for (i = 0; i < 4; i++)
     {
         if ((p1.code[i] == p2.code[i]) && (p1.code[i] == '1'))
             flag = '0';
     }
     if (flag == 0)
-        return (1);
-    return (2);
+        return 1;
+    return 2;
 }
 
 PT resetendpt(PT p1, PT p2)
@@ -85,7 +85,7 @@ PT resetendpt(PT p1, PT p2)
         for (i = 0; i < 4; i++)
             temp.code[i] = p1.code[i];
         if (temp.y <= 350 && temp.y >= 100)
-            return (temp);
+            return temp;
     }
     if (p1.code[0] == '1')
         y = 100;
@@ -99,10 +99,10 @@ PT resetendpt(PT p1, PT p2)
         temp.y = y;
         for (i = 0; i < 4; i++)
             temp.code[i] = p1.code[i];
-        return (temp);
+        return temp;
     }
     else
-        return (p1);
+        return p1;
 }
 
 int main()
