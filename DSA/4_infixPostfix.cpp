@@ -15,7 +15,7 @@ int priority (char alpha){ //priority
  
     return 0;
 }
-string convert(string infix) //covert
+string convert(string infix) //convert
 {
     int i = 0; 
     string postfix = "";
