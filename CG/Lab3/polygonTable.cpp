@@ -17,9 +17,10 @@ int main(){
 		scanf("%d", &ver);
 		int poly[ver];
 		
-		for(int i=0; i<ver*2; i+2){
+		for(int i=0; i<(ver*2); i+++){
 			printf("Enter vertex from face %d (x,y): ", face);
 			scanf("%d %d", &poly[i], &poly[i+1]);
+			i++;
 		}
 		face--;
 	}while(face>1);
