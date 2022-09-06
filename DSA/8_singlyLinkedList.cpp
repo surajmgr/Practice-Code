@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
-#include <conio.h>
+// #include <conio.h>
 using namespace std;
 
 struct Node{
@@ -32,6 +32,11 @@ void insert(int num){
             int pos;
             cout << "Enter the position to be inserted: ";
             cin >> pos;
+            if(pos==1){
+    			new_node->next = temp;
+                head = new_node;
+                break;
+			}
             for (int i = 1; i < pos-1; i++){
                 temp = temp->next;
             }
@@ -57,6 +62,8 @@ void insert(int num){
 }
 
 void Delete(){
+    if(head == NULL)
+        return;
 	int dCase;
 	Node *temp = head;
 	cout << "Delete:" << endl
@@ -79,13 +86,12 @@ void Delete(){
     			free(temp);
     			break;
 			}
-//			Problem!!!
-    		for(int i = 0; i < pos-1; i++)
+    		for(int i = 1; i < pos-1; i++)
     			temp = temp->next;
-	    	free(temp->next);
-    		if(temp->next->next != NULL)
+    		if(temp->next->next != NULL){
+                // free(temp->next);
 	    		temp->next = temp->next->next;
-	    	else
+            }else
 	    		temp->next = NULL;
     		break;
     	case 3:
@@ -147,6 +153,6 @@ int main(){
         cin >> q;
     } while (q == 'y');
 
-    getch();
+    // getch();
     return 0;
 }
