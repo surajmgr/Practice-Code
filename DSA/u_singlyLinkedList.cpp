@@ -1,5 +1,6 @@
 #include <iostream>
-// #include <conio.h>
+#include <stdlib.h>
+#include <conio.h>
 using namespace std;
 
 struct Node{
@@ -55,6 +56,50 @@ void insert(int num){
     }
 }
 
+void Delete(){
+	int dCase;
+	Node *temp = head;
+	cout << "Delete:" << endl
+         << "1. At the begining" << endl
+         << "2. At the Specific Position" << endl
+         << "3. At the end" << endl;
+    cin >> dCase;
+    
+    switch(dCase){
+    	case 1:
+    		head = temp->next;
+    		free(temp);
+    		break;
+    	case 2:
+    		int pos;
+    		cout<<"Enter the position to be deleted: ";
+    		cin>>pos;
+    		if(pos==1){
+    			head = temp->next;
+    			free(temp);
+    			break;
+			}
+//			Problem!!!
+    		for(int i = 0; i < pos-1; i++)
+    			temp = temp->next;
+	    	free(temp->next);
+    		if(temp->next->next != NULL)
+	    		temp->next = temp->next->next;
+	    	else
+	    		temp->next = NULL;
+    		break;
+    	case 3:
+    		while(temp->next->next != NULL)
+    			temp = temp->next;
+    		free(temp->next);
+    		temp->next = NULL;
+    		break;
+    	default:
+            cout<<"Invalid Choice!"<<endl;
+            break;
+	}
+}
+
 void traversal(){
     if (head == NULL)
     {
@@ -78,6 +123,7 @@ int main(){
 
     do{
         cout << "1. Insert" << endl
+        	 << "2. Delete" <<endl
              << "3. Display" << endl;
         cin >> caseN;
         switch (caseN){
@@ -87,6 +133,9 @@ int main(){
                 cin >> n;
                 insert(n);
                 break;
+            case 2:
+            	Delete();
+            	break;
             case 3:
                 traversal();
                 break;
@@ -98,6 +147,6 @@ int main(){
         cin >> q;
     } while (q == 'y');
 
-    // getch();
+    getch();
     return 0;
 }
