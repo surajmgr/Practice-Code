@@ -52,7 +52,7 @@ int main(){
 
     do{
         cout << "1. Insert" << endl
-        	 << "2. Delete" <<endl
+        	 << "2. Delete" << endl
              << "3. Display" << endl;
         cin >> caseN;
         switch (caseN){

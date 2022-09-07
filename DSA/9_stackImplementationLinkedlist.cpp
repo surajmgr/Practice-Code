@@ -53,8 +53,8 @@ int main(){
 
     do{
         cout << "1. Push" << endl
-        	 << "2. Pop" <<endl
-             << "3. Peak" <<endl
+        	 << "2. Pop" << endl
+             << "3. Peak" << endl
              << "4. Display" << endl;
         cin >> caseN;
         switch (caseN){
