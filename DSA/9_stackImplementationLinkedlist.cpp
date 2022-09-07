@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
-#include <conio.h>
+// #include <conio.h>
 using namespace std;
 
 struct Node{
@@ -26,6 +26,13 @@ void pop(){
 	}
 }
 
+void peak(){
+    if (top == NULL)
+        cout << "The List is empty!!!" << endl;
+    else
+        cout<<"Peak data is: "<<top->data<<endl;
+}
+
 void traversal(){
     if (top == NULL)
         cout << "The List is empty!!!" << endl;
@@ -47,7 +54,8 @@ int main(){
     do{
         cout << "1. Push" << endl
         	 << "2. Pop" <<endl
-             << "3. Display" << endl;
+             << "3. Peak" <<endl
+             << "4. Display" << endl;
         cin >> caseN;
         switch (caseN){
             case 1:
@@ -59,7 +67,10 @@ int main(){
             case 2:
             	pop();
             	break;
-            case 3:	
+            case 3:
+                peak();
+                break;
+            case 4:	
                 traversal();
                 break;
             default:
@@ -70,6 +81,6 @@ int main(){
         cin >> q;
     } while (q == 'y');
 
-    getch();
+    // getch();
     return 0;
 }
