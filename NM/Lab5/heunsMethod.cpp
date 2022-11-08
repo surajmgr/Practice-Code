@@ -12,7 +12,7 @@ int main() {
   printf("\nInput initial values of x and y: ");
   scanf("%f%f", & x, & y);
   printf("\nInput x at which y is required: ");
-  sceanf("%f", & xp);
+  scanf("%f", &xp);
   printf("\nInput step-size h: ");
   scanf("%f", & h);
   n = (int)((xp - x) / h + 0.5);
