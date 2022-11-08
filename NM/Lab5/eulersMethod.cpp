@@ -20,7 +20,7 @@ int main() {
     dy = h * f(x, y);
     x = x + h;
     y = y + dy;
-    printi("\n%d\t %f\t %f\n", i, x, y);
+    printf("\n%d\t %f\t %f\n", i, x, y);
   }
   printf("\nValue of y at x = %f is %f\n", xp, y);
   getch();
