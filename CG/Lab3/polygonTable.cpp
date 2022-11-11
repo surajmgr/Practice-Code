@@ -4,30 +4,35 @@
 #include <conio.h>
 
 int main(){
-	int ver, face;
+	int ver, face, n;
 	
 	int gdriver= DETECT, gmode;
 	initgraph(&gdriver, &gmode, "D:\\TURBOC3\\BGI");
 	
 	printf("Enter the number of faces: ");
 	scanf("%d", &face);
+	n=face;
 	
-	do{
-		printf("Enter the number of vertices in face %d: ", face);
+	for(int j=0; face!=j; face--){
+		printf("Enter the total number of vertex in face %d: ", n-face+1);
 		scanf("%d", &ver);
-		int poly[ver];
+		int poly[ver], i;
 		
-		for(int i=0; i<(ver*2); i+++){
-			printf("Enter vertex from face %d (x,y): ", face);
+		printf("Enter vertex from face %d (x,y): \n", n-face+1);
+		for(i=0; i<(ver*2); i++){
+			printf("\tx%d , y%d : ", i/2,i/2);
 			scanf("%d %d", &poly[i], &poly[i+1]);
 			i++;
 		}
-		face--;
-	}while(face>1);
+		poly[ver*2]=poly[0];
+		poly[(ver*2)+1]=poly[1];
+//		face=face-1;
+		setcolor(getmaxcolor());
+		setfillstyle(SOLID_FILL, n-face+1);
+		fillpoly(ver+1, poly);
+	}
 	
-	drawpoly(ver, poly);
 	getch();
-
 	closegraph();
 	return 0;
 }
