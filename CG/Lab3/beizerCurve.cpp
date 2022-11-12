@@ -16,7 +16,7 @@ float cTerm(int n,int i){
 	if(n<i)
 		cout<<"invalid";
 	else
-	return factorial(n)/(factorial(n-i)*factorial(i));
+		return factorial(n)/(factorial(n-i)*factorial(i));
 }
 
 float result(int a[max],int n,int i,float u){
@@ -31,14 +31,14 @@ int main(){
 	int gd=DETECT,gm;
 	initgraph(&gd,&gm,"C:\\TurboC3\\BGI");
 
-	int n,i;
+	int n,k,i=0;
 	printf("Enter number of control points: ");
 	scanf("%d", &n);
 
 	int x[n-1],y[n-1];
 	printf("Enter control points (one pair at a time): \n");
-	for(i=0;i<n;i++)
-		scanf("%d %d", &x[i], &y[i]);
+	for(k=0;k<n;k++)
+		scanf("%d %d", &x[k], &y[k]);
 	
 	double q;
 	for(q=0.0;q<1.0;q=q+0.0005){
@@ -47,10 +47,9 @@ int main(){
 		yp=result(y,n-1,i,q);
 		putpixel(xp,yp,WHITE);
 	}
-	for(i=0; i<n; i++)
-		putpixel(x[w],y[w],RED);
 
 	getch();
+	delay(5000);
 	closegraph();
 	return 0;
 }	
