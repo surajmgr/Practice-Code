@@ -1,0 +1,50 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: clang++ build active file",
+			"command": "/usr/bin/clang++",
+			"args": [
+				"-std=c++17",
+				"-fcolor-diagnostics",
+				"-fansi-escape-codes",
+				"-Wall",
+				"-g",
+				"-I${workspaceFolder}/CG/openGL/dependencies/include",
+				"-L${workspaceFolder}/CG/openGL/dependencies/library",
+				"${workspaceFolder}/CG/openGL/*.cpp",
+				"${workspaceFolder}/CG/openGL/glad.c",
+				"${workspaceFolder}/CG/openGL/dependencies/library/libglfw.3.3.dylib",
+				"${workspaceFolder}/CG/openGL/dependencies/library/libglut.3.12.0.dylib",
+				"${workspaceFolder}/CG/openGL/dependencies/library/libglut.a",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}",
+				"-framework",
+				"OpenGL",
+				"-framework",
+				"GLUT",
+				"-framework",
+				"Cocoa",
+				"-framework",
+				"IOKit",
+				"-framework",
+				"CoreVideo",
+				"-framework",
+				"CoreFoundation",
+				"-Wno-deprecated"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: /usr/bin/clang++"
+		}
+	]
+}

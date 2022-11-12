@@ -1,0 +1,13 @@
+dependencies folder contains the necessary openGL dependencies
+Change the compiler configuration with the json file of dependencies
+
+AVOID CHANGE:
+-folder: dependencies
+-glad.c
+
+sampleTriangle is the sample openGL file for a simple triangle drawing.
+
+FOR OUTPUT:
+-Comment out other cpp file of openGL, so there won't be any duplicate errors
+-Build the file with the changed json configuration
+-./CG/openGL/fileNameNoExtension
