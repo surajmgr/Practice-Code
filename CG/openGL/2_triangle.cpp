@@ -25,7 +25,7 @@ int main(int argc, char** argv)
     glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE); // Single frame buffer
     glutInitWindowSize(400, 300);
     glutInitWindowPosition(100, 100);
-    glutCreateWindow("Hello world!");
+    glutCreateWindow("Drawing Triangle using GLUT OpenGL");
     glutDisplayFunc(displayMe);
     glutMainLoop();
     return 0;
