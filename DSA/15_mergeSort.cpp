@@ -80,7 +80,7 @@ void mergeSort(int array[], int const begin, int const end)
 
 int main()
 {
-  int len=5, arr[len];
+	int len=5, arr[len];
 	int arr_size = sizeof(arr) / sizeof(arr[0]);
 	
     cout<<"Enter the data: "<<endl;
@@ -91,6 +91,6 @@ int main()
 
 	cout << "\nSorted array is \n";
 	for (int i = 0; i < size; i++)
-		cout << A[i] << " ";
+		cout << arr[i] << " ";
 	return 0;
 }
